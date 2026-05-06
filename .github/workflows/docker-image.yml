@@ -21,7 +21,7 @@ jobs:
     - name: Git Semantic Version
       uses: PaulHatch/semantic-version@v5.4.0
       with:
-        major_pattern: "major:"
+        major_pattern: "(MAJOR):"
         minor_pattern: "feat:"
         format: "${major}.${minor}.${patch}-prerelease${increment}"
         bump_each_commit: true
