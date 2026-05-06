@@ -19,13 +19,13 @@ jobs:
         fetch-depth: 0
         
     - name: Git Semantic Version
-      uses: PaulHatch/semantic-version@v5.4.0
+      uses: paulhatch/semantic-version@v5.4.0
       with:
-        major_pattern: "(MAJOR):"
-        minor_pattern: "feat:"
-        format: "${major}.${minor}.${patch}-prerelease${increment}"
+        major_pattern: "/major(\\(.+\\))?:/"
+        minor_pattern: "/feat(\\(.+\\))?:/"
+        version_format: "${major}.${minor}.${patch}-prerelease${increment}"
         bump_each_commit: true
-      id: Version
+      id: version
     
     - name: Docker Login
       env:
